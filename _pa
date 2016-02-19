@@ -1,0 +1,11 @@
+# ex: shiftwidth=4 expandtab filetype=sh
+
+_pa()
+{
+    local cur prev words cword
+    _init_completion || return
+
+    COMPREPLY=($(compgen -W 'install search remove upgrade' -- "$cur"))
+
+} &&
+complete -F _pa pa

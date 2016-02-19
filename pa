@@ -1,0 +1,22 @@
+#!/usr/bin/bash
+
+for arg in "$@"; do
+    case $arg in
+        install)
+            shift
+            pacman -S "$@"
+            ;;
+        search)
+            shift
+            pacman -Ss "$@"
+            ;;
+        remove)
+            shift
+            pacman -R "$@"
+            ;;
+        upgrade)
+            shift
+            pacman -Syu "$@"
+            ;;
+    esac
+done
