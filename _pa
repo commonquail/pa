@@ -5,7 +5,14 @@ _pa()
     local cur prev words cword
     _init_completion || return
 
-    COMPREPLY=($(compgen -W 'install search remove dist-upgrade upgrade' -- "$cur"))
+    if [[ $COMP_CWORD -gt 1 ]]; then
+        dist_completion=/usr/share/bash-completion/completions/pacman
+        if [[ $prev != *upgrade && -f $dist_completion ]]; then
+            . $dist_completion && _pacman
+        fi 
+    else
+        COMPREPLY=($(compgen -W 'install search remove dist-upgrade upgrade' -- "$cur"))
+    fi
 
 } &&
 complete -F _pa pa
