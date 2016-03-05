@@ -4,19 +4,19 @@ for arg in "$@"; do
     case $arg in
         install)
             shift
-            pacman -S "$@"
+            pacman --color=auto -S "$@"
             ;;
         search)
             shift
-            pacman -Ss "$@"
+            pacman --color=auto -Ss "$@"
             ;;
         remove)
             shift
-            pacman -R "$@"
+            pacman --color=auto -R "$@"
             ;;
         upgrade)
             shift
-            pacman -Syu "$@"
+            pacman --color=auto -Syu "$@"
             ;;
     esac
 done
