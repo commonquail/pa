@@ -11,7 +11,7 @@ _pa()
             . $dist_completion && _pacman
         fi 
     else
-        COMPREPLY=($(compgen -W 'install search remove dist-upgrade upgrade' -- "$cur"))
+        COMPREPLY=($(compgen -W 'install search remove upgrade' -- "$cur"))
     fi
 
 } &&
