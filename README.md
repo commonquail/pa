@@ -5,18 +5,15 @@ that improves on a few of `pacman`'s lousy ergonomics.
 
 `pa` is not strictly MSYS2-only,
 but it is developed to be used specifically in MSYS2.
-In particular, it includes the `dist-upgrade` command
-that safely upgrades the MSYS2 runtime.
 
 ## Usage
 
-`pa` has five commands, each mapping directly to some invocation of `pacman`:
+`pa` has four commands, each mapping directly to some invocation of `pacman`:
 
 * `install <package>` to install `<package>`
 * `remove <package>` to remove `<package>`
 * `search <pattern>` to search for `<pattern>` in a `pacman` mirror
-* `dist-upgrade` to perform a system upgrade
-* `upgrade` to upgrade all packages
+* `upgrade` to upgrade either the core system or all userland packages
 
 `pa` has a simple completion of its own
 and additionally delegates to the official `pacman` completion, if available.

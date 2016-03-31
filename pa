@@ -14,10 +14,6 @@ for arg in "$@"; do
             shift
             pacman --color=auto -R "$@"
             ;;
-        dist-upgrade)
-            shift
-            update-core
-            ;;
         upgrade)
             shift
             pacman --color=auto -Syu "$@"
